@@ -1,19 +1,9 @@
-const initGameboard = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null]
-]
-export default function Gameboard({onSelectCell, turns}) {
-    let gameBoard = initGameboard
-    for(const turn of turns){
-        const {square, player} = turn;
-        const {row, col} = square;
 
-        gameBoard[row][col] = player;
-    }
+export default function Gameboard({onSelectCell, board}) {
+
     return (
         <ol id="game-board">
-            {gameBoard.map((row, rowIndex) =>
+            {board.map((row, rowIndex) =>
             (
                 <li key={rowIndex}>
                     <ol>
